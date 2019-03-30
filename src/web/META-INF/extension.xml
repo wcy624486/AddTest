@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE extension SYSTEM "extension.dtd"> 
+<extension name="addTest" alias="addTest" desc="" priority="100" version="1.0"> 
+	<enable-jsp-processor>1</enable-jsp-processor> 
+	<!--    
+	<servlet>  
+		<servlet-name>TestServlet</servlet-name> 
+		<servlet-class>smartbi.extension.test.TestServlet</servlet-class> 
+		<init-param>  
+			<param-name>x</param-name> 
+			<param-value>xv</param-value>  
+		</init-param>  
+		<init-param> 
+			<param-name>y</param-name>  
+			<param-value>yv</param-value> 
+		</init-param>  
+		<load-on-startup>1</load-on-startup>  
+	</servlet> 
+	<servlet-mapping>  
+		<servlet-name>TestServlet</servlet-name> 
+		<url-pattern>/TestServlet</url-pattern>  
+	</servlet-mapping>  
+	--> 
+</extension> 

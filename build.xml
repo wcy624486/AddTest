@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<project name="addTest" default="dist"> 
+    <property name="ext_name" value="addTest"/> 
+    <target name="clean"> 
+        <echo>==============</echo> 
+        <echo>${ant.project.name}: clean</echo> 
+        <echo>==============</echo> 
+        <delete dir="${basedir}/dist"/> 
+    </target> 
+    <target name="init"> 
+        <echo>==============</echo> 
+       <echo>${ant.project.name}: init</echo> 
+        <echo>==============</echo> 
+        <tstamp><format property="today" pattern="yyyy-MM-dd HH:mm:ss"/></tstamp> 
+        <mkdir dir="${basedir}/dist"/> 
+        <mkdir dir="${basedir}/lib-compile"/> 
+        <mkdir dir="${basedir}/src/web/META-INF/lib"/> 
+        <mkdir dir="${basedir}/src/web/META-INF/classes"/> 
+        <property name="Application.Tstamp" value="${basedir}/dist/Application.Tstamp"/> 
+        <touch file="${Application.Tstamp}" datetime="${today}" pattern="yyyy-MM-dd HH:mm:ss"/> 
+    </target> 
+    <target name="compile"> 
+        <echo>==============</echo> 
+        <echo>${ant.project.name}: compile</echo> 
+        <echo>==============</echo> 
+        <javac destdir="${basedir}/src/web/META-INF/classes" srcdir="${basedir}/src/java" debug="true"> 
+            <classpath> 
+                <fileset dir="${basedir}/lib-compile" /> 
+                <fileset dir="${basedir}/src/web/META-INF/lib"/> 
+            </classpath> 
+        </javac> 
+    </target>  
+    <target name="jar"> 
+        <echo file="${basedir}/src/web/META-INF/version.txt" message="${today}" /> 
+        <jar destfile="${basedir}/dist/${ext_name}.ext" duplicate="preserve"> 
+            <fileset dir="${basedir}/src/web">  
+                <exclude name="**/.cvsignore" />  
+            </fileset>  
+        </jar> 
+        <delete file="${basedir}/src/web/META-INF/version.txt"/> 
+    </target>  
+    <target name="dist" depends="init"> 
+        <echo>==============</echo> 
+        <echo>${ant.project.name}: dist</echo> 
+        <echo>==============</echo>  
+        <antcall target="compile"/> 
+        <antcall target="jar"/>  
+    </target>  
+</project>  

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd"> 
+<beans> 
+    <bean id="framework" class="smartbi.framework.Framework" factory-method="getInstance"> 
+        <property name="modules"> 
+			<map> 
+				<!--  
+				<entry><key><value>WizardQueryService</value></key><ref bean="WizardQueryService" /></entry> 
+				<entry><key><value>wizardQueryModule</value></key><ref bean="wizardQueryModule" /></entry> 
+				--> 
+			</map> 
+        </property> 
+    </bean> 
+    <bean id="rmi" class="smartbi.framework.rmi.RMIModule" factory-method="getInstance"> 
+        <property name="modules"> 
+			<map> 
+				<!--  
+				<entry><key><value>WizardQueryService</value></key><ref bean="WizardQueryService" /></entry> 
+				--> 
+			</map> 
+        </property> 
+    </bean> 
+	<!--  
+	<bean id="wizardQueryModule" class="smartbi.wizard.query.WizardQueryModule" factory-method="getInstance"> 
+		<property name="daoModule" ref="dao"/> 
+	</bean> 
+	<bean id="WizardQueryService" class="smartbi.wizard.query.WizardQueryService" factory-method="getInstance"></bean> 
+	-->  
+</beans>  

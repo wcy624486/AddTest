@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<portlet-app> 
+	<!--  
+	<portlet title="" icon=""> 
+        <portlet-name>WIZARD_SIMPLE_REPORT</portlet-name> 
+        <display-name>Wizard Simple Report</display-name> 
+        <description></description> 
+        <is-bof-tree-node>true</is-bof-tree-node> 
+		<portlet-viewer-js-class>smartbi.wizard.handler.WizardSimpleReportPortletViewer</portlet-viewer-js-class> 
+		<portlet-editor-js-class>smartbi.wizard.handler.WizardSimpleReportPortletEditor</portlet-editor-js-class> 
+	</portlet>  
+	-->  
+</portlet-app> 
